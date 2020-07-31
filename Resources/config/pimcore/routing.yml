@@ -1,0 +1,5 @@
+basilicom_multi_domain:
+    resource: "@BasilicomMultiDomainBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

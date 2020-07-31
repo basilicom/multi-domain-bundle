@@ -1,0 +1,48 @@
+{
+  "name": "basilicom/multi-domain-bundle",
+  "license": "GPL-3.0-or-later",
+  "type": "pimcore-bundle",
+  "description": "This Bundle provides Multi-Domain features for Pimcore.",
+  "keywords": [
+    "pimcore",
+    "multi",
+    "domain",
+    "mdm"
+  ],
+  "homepage": "https://basilicom.de",
+  "authors": [
+    {
+      "name": "Christoph Luehr",
+      "email": "christoph.luehr@basilicom.de"
+    },
+    {
+      "name": "Basilicom GmbH",
+      "homepage": "https://basilicom.de"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "require": {
+    "pimcore/pimcore": ">=6.0 <7.0"
+  },
+  "suggest": {
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Basilicom\\MultiDomainBundle\\": "."
+    },
+    "exclude-from-classmap": [
+      "Tests"
+    ]
+  },
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "Basilicom\\MultiDomainBundle\\BasilicomMultiDomainBundle"
+      ]
+    }
+  }
+}
