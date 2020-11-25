@@ -22,7 +22,7 @@ class DomainObject extends AdminStyle
 
         if (($element instanceof DataObject)
             && ($element->getType() == AbstractObject::OBJECT_TYPE_VARIANT)
-            && ($element->getDomain() !== null)) {
+            && ($element->getDomain() != '')) {
 
             $this->setElementIcon('/bundles/pimcoreadmin/img/flat-color-icons/mind_map.svg');
             $this->setElementIconClass(null);
