@@ -7,6 +7,7 @@ namespace Basilicom\MultiDomainBundle\Service;
 use Basilicom\MultiDomainBundle\Model\DataObject;
 use Pimcore\Model\DataObject\AbstractObject;
 use Pimcore\Model\DataObject\Product;
+use Pimcore\Logger;
 
 class Domain
 {
@@ -17,9 +18,7 @@ class Domain
 
     private static function log($msg)
     {
-        $fh = fopen('/tmp/pimcore.log','a+');
-        fputs($fh, $msg."\n");
-        fclose($fh);
+        Logger::debug("MultiDomainBundle " . $msg);
     }
 
     public static function isSelected($check = null)

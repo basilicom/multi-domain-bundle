@@ -4,7 +4,9 @@
 namespace Basilicom\MultiDomainBundle\Model;
 
 
+use Basilicom\MultiDomainBundle\AdminStyle\DomainObject;
 use Basilicom\MultiDomainBundle\Service\Domain;
+use Pimcore\Logger;
 use Pimcore\Model\DataObject\AbstractObject;
 use Pimcore\Model\DataObject\Concrete;
 use Pimcore\Model\DataObject\Exception\InheritanceParentNotFoundException;
@@ -23,11 +25,10 @@ class DataObject extends \Pimcore\Model\DataObject\Concrete implements Model\Dat
             return;
         }
 
-        $fh = fopen('/tmp/pimcore.log','a+');
-        fputs($fh,
-            '['.implode('|',Domain::get()).'] '
-            .$this->getKey().': '.$key.' | '.$msg."\n");
-        fclose($fh);
+        $msg = '['.implode('|',Domain::get()).'] '
+            . $this->getKey() . ': ' . $key . ' | ' . $msg;
+
+        Logger::debug("MultiDomainBundle " . $msg);
     }
 
     /**
