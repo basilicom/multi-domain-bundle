@@ -27,7 +27,7 @@ Glossary:
 * **Domain Child**  - an domain variant as child of a regular variant object, 
   _overriding_ regular variant values
 
-**WARNING: WORK IN PROGRESS - CONTAINS DEBUG CODE!**
+Hint: If Pimcore debug mode is enabled, a lot of messages are logged! 
 
 ## License
 
@@ -69,7 +69,7 @@ use Basilicom\MultiDomainBundle\Service\Domain;
 $object = \Pimcore\Model\DataObject\AbstractObject::getByPath('/my-object');
 
 // select two domain contexts, first to contain a value override wins!
-Domain::select(['Country US','Marketplace eBay']);
+Domain::select(['Country US', 'Marketplace eBay']);
 
 $fieldValue = $object->getMyFieldName();
 
@@ -132,8 +132,7 @@ You get the following data for the various domain selections:
 
 ### Limitations
 
-* has not been tested much
-* includes debug-code
-* includes obsolete code
+* use at own risk, intensive testing suggested!
+* needs more cleanup
 
 
